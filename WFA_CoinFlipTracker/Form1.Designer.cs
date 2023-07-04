@@ -34,7 +34,6 @@
             btnStartAmount = new Button();
             label2 = new Label();
             panelTop = new Panel();
-            pbSettings = new PictureBox();
             label4 = new Label();
             label3 = new Label();
             cbTopMost = new CheckBox();
@@ -50,8 +49,16 @@
             label6 = new Label();
             btnTSide = new Button();
             btnCTSide = new Button();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            groupBox1 = new GroupBox();
+            cbSideSelecter = new CheckBox();
             panelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbSettings).BeginInit();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // btnWon
@@ -60,7 +67,7 @@
             btnWon.FlatStyle = FlatStyle.Flat;
             btnWon.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnWon.ForeColor = Color.FromArgb(128, 255, 128);
-            btnWon.Location = new Point(39, 206);
+            btnWon.Location = new Point(40, 147);
             btnWon.Name = "btnWon";
             btnWon.Size = new Size(95, 44);
             btnWon.TabIndex = 0;
@@ -74,7 +81,7 @@
             tbStartAmount.BackColor = Color.FromArgb(61, 61, 61);
             tbStartAmount.BorderStyle = BorderStyle.FixedSingle;
             tbStartAmount.ForeColor = Color.White;
-            tbStartAmount.Location = new Point(93, 288);
+            tbStartAmount.Location = new Point(94, 229);
             tbStartAmount.Name = "tbStartAmount";
             tbStartAmount.Size = new Size(190, 23);
             tbStartAmount.TabIndex = 2;
@@ -86,7 +93,7 @@
             btnStartAmount.FlatStyle = FlatStyle.Flat;
             btnStartAmount.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnStartAmount.ForeColor = Color.White;
-            btnStartAmount.Location = new Point(12, 288);
+            btnStartAmount.Location = new Point(13, 229);
             btnStartAmount.Name = "btnStartAmount";
             btnStartAmount.Size = new Size(75, 23);
             btnStartAmount.TabIndex = 4;
@@ -109,7 +116,6 @@
             // 
             panelTop.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelTop.BackColor = Color.FromArgb(61, 61, 61);
-            panelTop.Controls.Add(pbSettings);
             panelTop.Controls.Add(label4);
             panelTop.Controls.Add(label3);
             panelTop.Controls.Add(label2);
@@ -118,16 +124,6 @@
             panelTop.Name = "panelTop";
             panelTop.Size = new Size(304, 42);
             panelTop.TabIndex = 6;
-            // 
-            // pbSettings
-            // 
-            pbSettings.Image = (Image)resources.GetObject("pbSettings.Image");
-            pbSettings.Location = new Point(274, 0);
-            pbSettings.Name = "pbSettings";
-            pbSettings.Size = new Size(27, 25);
-            pbSettings.TabIndex = 17;
-            pbSettings.TabStop = false;
-            pbSettings.Click += pbSettings_Click;
             // 
             // label4
             // 
@@ -145,7 +141,7 @@
             label3.Name = "label3";
             label3.Size = new Size(28, 15);
             label3.TabIndex = 6;
-            label3.Text = "v0.8";
+            label3.Text = "v0.9";
             // 
             // cbTopMost
             // 
@@ -166,7 +162,7 @@
             btnLost.FlatStyle = FlatStyle.Flat;
             btnLost.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnLost.ForeColor = Color.Red;
-            btnLost.Location = new Point(162, 206);
+            btnLost.Location = new Point(163, 147);
             btnLost.Name = "btnLost";
             btnLost.Size = new Size(95, 44);
             btnLost.TabIndex = 0;
@@ -179,7 +175,7 @@
             lblProfit.AutoSize = true;
             lblProfit.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblProfit.ForeColor = Color.White;
-            lblProfit.Location = new Point(58, 45);
+            lblProfit.Location = new Point(59, 1);
             lblProfit.Name = "lblProfit";
             lblProfit.Size = new Size(23, 25);
             lblProfit.TabIndex = 7;
@@ -190,7 +186,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(2, 44);
+            label1.Location = new Point(3, 0);
             label1.Name = "label1";
             label1.Size = new Size(65, 25);
             label1.TabIndex = 8;
@@ -201,7 +197,7 @@
             lblDisplayText.Anchor = AnchorStyles.Top;
             lblDisplayText.AutoSize = true;
             lblDisplayText.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDisplayText.Location = new Point(87, 107);
+            lblDisplayText.Location = new Point(90, 63);
             lblDisplayText.Name = "lblDisplayText";
             lblDisplayText.Size = new Size(124, 21);
             lblDisplayText.TabIndex = 9;
@@ -216,10 +212,10 @@
             tbNextBetAmount.BorderStyle = BorderStyle.None;
             tbNextBetAmount.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             tbNextBetAmount.ForeColor = Color.White;
-            tbNextBetAmount.Location = new Point(12, 129);
+            tbNextBetAmount.Location = new Point(10, 85);
             tbNextBetAmount.Name = "tbNextBetAmount";
             tbNextBetAmount.ReadOnly = true;
-            tbNextBetAmount.Size = new Size(271, 43);
+            tbNextBetAmount.Size = new Size(281, 43);
             tbNextBetAmount.TabIndex = 11;
             tbNextBetAmount.TextAlign = HorizontalAlignment.Center;
             // 
@@ -228,7 +224,7 @@
             btnPatten.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnPatten.FlatStyle = FlatStyle.Flat;
             btnPatten.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnPatten.Location = new Point(217, 44);
+            btnPatten.Location = new Point(218, 2);
             btnPatten.Name = "btnPatten";
             btnPatten.Size = new Size(75, 23);
             btnPatten.TabIndex = 12;
@@ -239,7 +235,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(5, 70);
+            label5.Location = new Point(6, 26);
             label5.Name = "label5";
             label5.Size = new Size(67, 15);
             label5.TabIndex = 13;
@@ -248,7 +244,7 @@
             // lblTotalProfit
             // 
             lblTotalProfit.AutoSize = true;
-            lblTotalProfit.Location = new Point(69, 71);
+            lblTotalProfit.Location = new Point(70, 27);
             lblTotalProfit.Name = "lblTotalProfit";
             lblTotalProfit.Size = new Size(13, 15);
             lblTotalProfit.TabIndex = 14;
@@ -260,7 +256,7 @@
             tbOppo.BackColor = Color.FromArgb(61, 61, 61);
             tbOppo.BorderStyle = BorderStyle.FixedSingle;
             tbOppo.ForeColor = Color.White;
-            tbOppo.Location = new Point(93, 259);
+            tbOppo.Location = new Point(94, 200);
             tbOppo.Name = "tbOppo";
             tbOppo.Size = new Size(190, 23);
             tbOppo.TabIndex = 15;
@@ -270,7 +266,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(15, 262);
+            label6.Location = new Point(16, 203);
             label6.Name = "label6";
             label6.Size = new Size(70, 17);
             label6.TabIndex = 16;
@@ -280,7 +276,7 @@
             // btnTSide
             // 
             btnTSide.FlatStyle = FlatStyle.Flat;
-            btnTSide.Location = new Point(7, 88);
+            btnTSide.Location = new Point(8, 44);
             btnTSide.Name = "btnTSide";
             btnTSide.Size = new Size(31, 23);
             btnTSide.TabIndex = 17;
@@ -291,7 +287,7 @@
             // btnCTSide
             // 
             btnCTSide.FlatStyle = FlatStyle.Flat;
-            btnCTSide.Location = new Point(42, 88);
+            btnCTSide.Location = new Point(43, 44);
             btnCTSide.Name = "btnCTSide";
             btnCTSide.Size = new Size(31, 23);
             btnCTSide.TabIndex = 17;
@@ -299,32 +295,90 @@
             btnCTSide.UseVisualStyleBackColor = true;
             btnCTSide.Click += btnCTSide_Click;
             // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(-5, 41);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(304, 289);
+            tabControl1.TabIndex = 18;
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = Color.FromArgb(31, 31, 31);
+            tabPage1.Controls.Add(btnLost);
+            tabPage1.Controls.Add(btnCTSide);
+            tabPage1.Controls.Add(tbStartAmount);
+            tabPage1.Controls.Add(btnTSide);
+            tabPage1.Controls.Add(btnStartAmount);
+            tabPage1.Controls.Add(lblDisplayText);
+            tabPage1.Controls.Add(btnWon);
+            tabPage1.Controls.Add(tbNextBetAmount);
+            tabPage1.Controls.Add(label6);
+            tabPage1.Controls.Add(tbOppo);
+            tabPage1.Controls.Add(btnPatten);
+            tabPage1.Controls.Add(lblTotalProfit);
+            tabPage1.Controls.Add(label5);
+            tabPage1.Controls.Add(lblProfit);
+            tabPage1.Controls.Add(label1);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(296, 261);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Main";
+            // 
+            // tabPage2
+            // 
+            tabPage2.BackColor = Color.FromArgb(31, 31, 31);
+            tabPage2.Controls.Add(groupBox1);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(296, 261);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Settings";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(cbSideSelecter);
+            groupBox1.ForeColor = Color.White;
+            groupBox1.Location = new Point(6, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(284, 252);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Settings";
+            // 
+            // cbSideSelecter
+            // 
+            cbSideSelecter.AutoSize = true;
+            cbSideSelecter.Checked = true;
+            cbSideSelecter.CheckState = CheckState.Checked;
+            cbSideSelecter.FlatStyle = FlatStyle.Flat;
+            cbSideSelecter.Location = new Point(7, 22);
+            cbSideSelecter.Name = "cbSideSelecter";
+            cbSideSelecter.Size = new Size(89, 19);
+            cbSideSelecter.TabIndex = 0;
+            cbSideSelecter.Text = "Side Selecter";
+            cbSideSelecter.UseVisualStyleBackColor = true;
+            cbSideSelecter.CheckedChanged += cbSideSlecter_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 31, 31);
             ClientSize = new Size(295, 323);
-            Controls.Add(btnCTSide);
-            Controls.Add(btnTSide);
-            Controls.Add(lblDisplayText);
-            Controls.Add(label6);
-            Controls.Add(tbNextBetAmount);
+            Controls.Add(tabControl1);
             Controls.Add(panelTop);
-            Controls.Add(tbOppo);
-            Controls.Add(btnLost);
-            Controls.Add(btnPatten);
-            Controls.Add(lblTotalProfit);
-            Controls.Add(lblProfit);
-            Controls.Add(btnWon);
-            Controls.Add(btnStartAmount);
-            Controls.Add(label1);
-            Controls.Add(label5);
-            Controls.Add(tbStartAmount);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
+            MaximumSize = new Size(311, 362);
             MinimizeBox = false;
             MinimumSize = new Size(311, 362);
             Name = "Form1";
@@ -333,9 +387,13 @@
             Load += Form1_Load;
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbSettings).EndInit();
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -358,8 +416,12 @@
         private Label lblTotalProfit;
         private TextBox tbOppo;
         private Label label6;
-        private PictureBox pbSettings;
         private Button btnTSide;
         private Button btnCTSide;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private GroupBox groupBox1;
+        private CheckBox cbSideSelecter;
     }
 }

@@ -10,9 +10,6 @@ namespace WFA_CoinFlipTracker
         }
 
         private WLPatten wlpattenForm;
-        private Settings settingsForm;
-        public Button ButtonTSide => btnTSide;
-        public Button ButtonCTSide => btnCTSide;
 
         int startAmount = 0;
         int betAmount = 0;
@@ -70,7 +67,7 @@ namespace WFA_CoinFlipTracker
         {
             opponent = tbOppo.Text;
             StreamWriter sw = File.AppendText(path);
-            sw.WriteLine($"Won | ${betAmount} | {opponent} | {side}");
+            sw.WriteLine($"Won | ${betAmount} | {opponent} {side}");
             sw.Close();
 
             betAmount = startAmount;
@@ -84,7 +81,7 @@ namespace WFA_CoinFlipTracker
         {
             opponent = tbOppo.Text;
             StreamWriter sw = File.AppendText(path);
-            sw.WriteLine($"Lost  | ${betAmount} | {opponent} | {side}");
+            sw.WriteLine($"Lost  | ${betAmount} | {opponent} {side}");
             sw.Close();
 
             betAmount += betAmount;
@@ -133,37 +130,31 @@ namespace WFA_CoinFlipTracker
 
         public void pbSettings_Click(object sender, EventArgs e)
         {
-            if (settingsForm != null && !settingsForm.IsDisposed)
-            {
-                settingsForm.Close();
-            }
-            else
-            {
-                settingsForm = new Settings(this);
-                settingsForm.Show();
-            }
+
         }
 
         public void btnTSide_Click(object sender, EventArgs e)
         {
-            if (btnTSide.Visible)
-            {
-                side = "T";
-            }
-            else
-            {
-                side = "";
-            }
+            side = "| T";
         }
 
         public void btnCTSide_Click(object sender, EventArgs e)
         {
-            if (btnCTSide.Visible)
+            side = "| CT";
+        }
+
+        private void cbSideSlecter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSideSelecter.Checked)
             {
-                side = "CT";
+                btnTSide.Visible = true;
+                btnCTSide.Visible = true;
             }
             else
             {
+                btnTSide.Visible = false;
+                btnCTSide.Visible = false;
+
                 side = "";
             }
         }
